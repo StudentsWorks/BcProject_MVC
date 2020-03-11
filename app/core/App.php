@@ -18,21 +18,35 @@
 
             $this->controller = new $this->controller;
             
-            if (isset($url[1])){
+            if (file_exists('../app/views/home/'. $url[0]. '.php' )) {
+                if (method_exists($this->controller, $url[0])){
+                    $this->method = $url[0];
+                } else {
+                    $this->method = 'universal';
+                }
+
+            }
+            
+            if (isset($url[1]) and $this->method == 'index'){
                 if (method_exists($this->controller, $url[1])){
                     $this->method = $url[1];
                     unset($url[1]);
                 }
-            }
+            } 
 
             $this->params = $url ? array_values($url) : [];
+            /*var_dump($this->params);
+            print "<br>";
+            var_dump($this->method);*/
 
             call_user_func_array([$this->controller, $this->method], $this->params);
         }
 
         public function parseUrl() {
             if (isset($_GET['url'])) {
-                return $url = explode('/', filter_var(rtrim($_GET['url'], '/'), FILTER_SANITIZE_URL));
+                $url = explode('/', filter_var(rtrim($_GET['url'], '/'), FILTER_SANITIZE_URL));
+                return $url;
             }
+            
         }
     }
