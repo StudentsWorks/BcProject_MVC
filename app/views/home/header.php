@@ -10,8 +10,22 @@
 				
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		
 		<link rel="stylesheet" href="css/main.css" />
-		<script src="../../../public/assets/js/copy_button.js"></script>
+		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="../../css/main.css" />
+		
+		<script src="../assets/js/main.js"></script>
+		<script src="../../assets/js/main.js"></script>
+		<script src="../../assets/js/util.js"></script>
+		<script src="../../assets/js/jquery.min.js"></script>
+		<script src="../../assets/js/jquery.dropotron.js"></script>
+		<script src="../../assets/js/browser.min.js"></script>
+		<script src="../../assets/js/breakpoints.min.js"></script>
+
+		<script src="assets/js/copy_button.js"></script>
+		<script src="../assets/js/copy_button.js"></script>
+		<script src="../../assets/js/copy_button.js"></script>
 
 	</head>
 	<body class="is-preload left-sidebar">

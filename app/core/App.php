@@ -8,6 +8,7 @@
         public function __construct (){
             $url = $this->parseUrl();
 
+
             if (empty($url)) {
                 $this->controller = 'home';
             }
