@@ -9,7 +9,7 @@ session_start();
 
 							<!-- Content -->
 								<article>
-
+								
 									
 								<?php print $_SESSION["contents"];?>
 									

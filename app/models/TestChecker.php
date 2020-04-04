@@ -21,6 +21,8 @@ class  TestChecker {
     }
 
     public function checkTest() {
+        //print "User values from checkTest: ";
+        //var_dump($this->user_answers);
         try {
             $stmt = "SELECT test_id from tests where test_name = \"$this->test_name\"";
             $res = $this->db->query($stmt) or die($this->db->error);
@@ -41,13 +43,18 @@ class  TestChecker {
         while ($solution = $res->fetch_assoc()) {
             $answ_key = $solution["question_id"]."_";
             $output.= "<h4>Otazka: ".$solution["question"]."</h4>";
-            if ($this->user_answers[$answ_key] == $solution["solution"]){        
+            if ($this->user_answers[$answ_key] == $solution["solution"]) {        
                 $output.= "<h6>Spravne :) </h6>";
+                $output.= "Vašá odpoved: ".$this->user_answers[$answ_key]."<br><br>";
+            }else if ($this->user_answers[$solution["question_id"]] == $solution["solution"]) {
+                $output.= "<h6>Spravne :) </h6>";
+                $output.= "Vašá odpoved: ".$this->user_answers[$solution["question_id"]]."<br><br>";
             } else {
                 $output.= "<h6>Chyba:( </h6>";
                 $output.= "Spravná odpoved: ".$solution["solution"]."<br>";
+                $output.= "Vašá odpoved: ".$this->user_answers[$solution["question_id"]].$this->user_answers[$answ_key]."<br><br>";
             }
-            $output.= "Vašá odpoved: ".$this->user_answers[$answ_key]."<br><br>";
+            
             
         }
 

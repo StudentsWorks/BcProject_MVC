@@ -39,6 +39,18 @@
 										<article>
 
 											<h2 id ='p1'>Triedy</h2>
+											<form action = "test.php" method = "POST">
+											<label class="container">One
+  <input type="radio" >One
+  <span class="checkmark"></span>
+</label>
+
+<label class="container">Two
+  <input type="radio">
+  <span class="checkmark"></span>
+</label>
+  
+</form>
 											<p>Už sme sa naučili základov PHP. Predchádzajúca časť, ktorá sa zaoberala funkciami,
 												 nám dala obrovskú moc pri zlepšovaní kvality kodu a našej produktivity a efektivity ako programátorov.
 												  V tejto časti získame ešte jednu úroveň abstrakcie. Zameriame sa najmä na triedy. Koncepcia používania funkcií
