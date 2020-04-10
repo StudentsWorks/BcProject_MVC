@@ -20,11 +20,10 @@ class Test {
 
     public function getContents() {
         try {
-            $stmt = "SELECT test_id, test_type from tests where test_name = '$this->test_name'";
+            $stmt = "SELECT test_type from tests where test_name = '$this->test_name'";
             $res = $this->db->query($stmt) or die($this->db->error);
             if(!$res) exit('No rows');
             while ($test = $res->fetch_assoc()){
-                $test_id = $test["test_id"];
                 $test_type = $test["test_type"];
             }
                      
@@ -33,7 +32,7 @@ class Test {
         }       
         
         try {
-            $stmt = "SELECT question_id, question, solution from solutions where test_id = '$test_id' order by question_id";
+            $stmt = "SELECT question_id, question, solution from solutions where test_name = '$this->test_name' order by question_id";
             $res = $this->db->query($stmt) or die($this->db->error);
         } catch (Exception $e){
             print "An error occured: ".$e->getMessage();
@@ -50,7 +49,7 @@ class Test {
             //print "Multiple type<br>";
             
             try {
-                $s = "SELECT options from options_bank where test_id = '$test_id'";
+                $s = "SELECT options from options_bank where test_name = '$this->test_name'";
                 $opt = $this->db->query($s) or die($this->db->error);
                 $options = array();
                 while ($option = $opt->fetch_assoc()) {
@@ -112,7 +111,6 @@ class Test {
                 $output.="<span class='checkmark'></span></label>";
             }
         } 
-
 
         $output.="<input type = 'submit'  value='Odovzdať'></form>";
         return $output;

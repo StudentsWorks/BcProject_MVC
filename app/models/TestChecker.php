@@ -20,40 +20,48 @@ class  TestChecker {
         $this->user_answers = $user_answers;
     }
 
+    public function clearData($data) {
+
+        return strtolower(preg_replace('/\s+/', ' ', $data));
+    }
+
     public function checkTest() {
         //print "User values from checkTest: ";
         //var_dump($this->user_answers);
-        try {
-            $stmt = "SELECT test_id from tests where test_name = \"$this->test_name\"";
-            $res = $this->db->query($stmt) or die($this->db->error);
-            $test_id = $res->fetch_row()[0];
-            if(!$test_id) exit('No rows');         
-        } catch (Exception $e){
-            print "An error occured: ".$e->getMessage();
-        }       
+      
         
         try {
-            $stmt = "SELECT question_id, question, solution from solutions where test_id = \"$test_id\" order by question_id";
+            $stmt = "SELECT question_id, question, solution from solutions where test_name = \"$this->test_name\" order by question_id";
             $res = $this->db->query($stmt) or die($this->db->error);
         } catch (Exception $e){
             print "An error occured: ".$e->getMessage();
         }
 
         $output = "<center><h1>".ucfirst($this->test_name)."</h1><br></center>";
+        $correct = 0;
+        $total = 0;
         while ($solution = $res->fetch_assoc()) {
+            $total ++;
             $answ_key = $solution["question_id"]."_";
             $output.= "<h4>Otazka: ".$solution["question"]."</h4>";
-            if ($this->user_answers[$answ_key] == $solution["solution"]) {        
+            
+            $cleanAnswer = $this->clearData($this->user_answers[$answ_key]);
+            $cleanAnswer1 = $this->clearData($this->user_answers[$solution["question_id"]]);
+            
+            if ($cleanAnswer == $solution["solution"]) {   
+                $correct ++;     
                 $output.= "<h6>Spravne :) </h6>";
-                $output.= "Vašá odpoved: ".$this->user_answers[$answ_key]."<br><br>";
-            }else if ($this->user_answers[$solution["question_id"]] == $solution["solution"]) {
+                $output.= "Vašá odpoved: ".$cleanAnswer."<br><br>";
+            }else if ($cleanAnswer1 == $solution["solution"]) {
+                $correct++;
                 $output.= "<h6>Spravne :) </h6>";
-                $output.= "Vašá odpoved: ".$this->user_answers[$solution["question_id"]]."<br><br>";
+                $output.= "Vašá odpoved: ".$cleanAnswer1."<br><br>";
             } else {
                 $output.= "<h6>Chyba:( </h6>";
                 $output.= "Spravná odpoved: ".$solution["solution"]."<br>";
-                $output.= "Vašá odpoved: ".$this->user_answers[$solution["question_id"]].$this->user_answers[$answ_key]."<br><br>";
+                $output.= "Vašá odpoved: ".$cleanAnswer.$cleanAnswer1."<br><br>";
             }
+        $output.="<h3>Uspešnosť: $correct/$total</h3>";
             
             
         }

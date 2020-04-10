@@ -1,4 +1,4 @@
-<?php require_once("header.php");
+<?php require_once("test_header.php");
 session_start();
  ?> 
 
@@ -18,4 +18,4 @@ session_start();
 						</div>
 					</div>
 				</div>
-<?php require_once("footer.php"); ?> 
+<?php require_once("test_footer.php"); ?> 

@@ -38,53 +38,52 @@
 								<ul>
 									<li><a href="index">Domov</a></li>
 									<li>
-										<a href="#">Inštalácia</a>
+										<a href="#">Inštalácia, test</a>
 										<ul>
-										    <li><a href="coPotrebujete">Čo potrebujte?</a></li>
-											<li><a href="sposoby">Spôsoby nainštalovať PHP</a></li>
-											<li><a href="instalaciaWindows">Windows</a></li>
-											<li><a href="instalaciaLinux">Linux</a></li>
-											
+										    <li><a href="TestCheck/startTest/instalacia">Inštalácia</a></li>											
 										</ul>
 									</li>
 									<li>
-										<a href="#">Čistý PHP</a>
+										<a href="#">Čistý PHP, testy</a>
 										<ul>
-											<li><a href="php_subory_terminal">Príprava</a></li>
-											<li><a href="cisty_php1">Syntax</a></li>
-											<li><a href="premenne">Premenné</a></li>
-											<li><a href="operatory">Operátory</a></li>
-											<li><a href="loops_condit">Slučky a podmienky</a></li>
-											<li><a href="functions">Funkcie</a></li>
-											<li><a href="classes">Triedy</a></li>
+											<li><a href="TestCheck/startTest/syntax">Syntax</a></li>
+											<li><a href="TestCheck/startTest/premenne">Premenné</a></li>
+											<li><a href="TestCheck/startTest/operatory">Operátory</a></li>
+											<li><a href="TestCheck/startTest/sluckyApodmenky">Slučky a podmienky</a></li>
+											<li><a href="TestCheck/startTest/funckie">Funkcie</a></li>
+											<li><a href="TestCheck/startTest/triedy">Triedy</a></li>
 										</ul>
 									</li>
+									
 									<li>
-										<a href="#">HTML</a>
+										<a href="#">Pokročilejší PHP, testy</a>
 										<ul>
-											<li><a href="htmlintro">Vstup do HTML</a></li>
-											<li><a href="htmltags">Zakladé znáčky HTML</a></li>
-											<li><a href="htmlforms">HTML Formuláre</a></li>
-											<li><a href="datatofile">Uloženie údajov formulára do textového súboru</a></li>
+											<li><a href="TestCheck/startTest/mysql">PHP a MySQL</a></li>
+											<li><a href="TestCheck/startTest/cookies">Cookies</a></li>
+											<li><a href="TestCheck/startTest/sessions">PHP-relácie</a></li>
 										</ul>
-									</li>
-									<li>
-										<a href="#">Pokročilejší PHP</a>
-										<ul>
-											<li><a href="phpwithmysql1">PHP a MySQL</a></li>
-											<li><a href="cookies">Cookies</a></li>
-											<li><a href="sessions">PHP-relácie</a></li>
-											<li><a href="mvcframework">MVC rámec</a></li>
-											<li><a href="curl">cURL a API</a></li>
-										</ul>
-									</li>
-									<li>
-										<a href="tests">Testy</a>
 									</li>
 								</ul>
 							</nav>
 
 					</header>
 				</div>
+			<!-- Main -->
+            <div id="main-wrapper">
+					<div class="container">
+						<div id="content">
 
+							<!-- Content -->
+								<article>
+
+									<h2>Testy</h2>
+
+									
+
+								</article>
+
+						</div>
+					</div>
+				</div>
+<?php require_once("footer.php"); ?> 
 			

@@ -23,7 +23,7 @@
 												<li><a href="#p2">Aritmetické operátory</a></li>
 												<li><a href="#p3">Operátory priradenia</a></li>
 												<li><a href="#p4">Porovnávacie operátory</a></li>
-												<li><a href="#p5">Operátory implementácie/dekrementácie</a></li>
+												<li><a href="#p5">Operátory inkrementácie/dekrementácie</a></li>
 												<li><a href="#p6">Logické operátory</a></li>
 												<li><a href="#p7">Reťazcové operátory</a></li>
 												<li><a href="#p8">Operátori podmieneného priradenia</a></li>
@@ -212,7 +212,7 @@ Používajú sa na porovnanie hodnoty premenných. Porovnávacie operátory sú 
   </tbody>
 </table>
 <p>
-<h3 id = 'p5'>Operátory implementácie/dekrementácie</h3>
+<h3 id = 'p5'>Operátory inkrementácie/dekrementácie</h3>
 Operátory inkrementácie sa používajú na zvýšenie hodnoty premennej.
 Operátory dekrementácie sa používajú na zníženie hodnoty premennej.
 <p><table class="table table-striped">

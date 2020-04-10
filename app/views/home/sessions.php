@@ -51,7 +51,7 @@ Keď PHP skript chce vybrať hodnotu z relácie premennej, PHP automaticky dosta
                                             </p>
                                             <h3 id = 'p2'>Spustenie relácie PHP</h3>
                                             <p>
-                                            PHP relácie je ľahko spustiť telefonovaním na funkciu <strong> session_start()</strong>.Táto funkcia najprv skontroluje, či je relácia už spustená a ak nie, spustí ju. Odporúča sa zavolať session_start () na začiatku stránky.
+                                            PHP relácie je ľahko spustiť volaním na funkciu <strong> session_start()</strong>.Táto funkcia najprv skontroluje, či je relácia už spustená a ak nie, spustí ju. Odporúča sa zavolať session_start () na začiatku stránky.
 <br>Premenné relácie sú uložené v asociatívnom poli s názvom <strong> $_SESSION[]</strong>. Tieto premenné môžu byť prístupné počas životnosti relácie.
 <br>Nasledujúci príklad spustí reláciu a potom zaregistruje premennú nazvanú counter, ktorá sa zvýši pri každej návšteve stránky počas relácie.
 <br>Využivajte funkciu <strong> isset()</strong> na kontrolu, či je premenná relácie už nastavená alebo nie.

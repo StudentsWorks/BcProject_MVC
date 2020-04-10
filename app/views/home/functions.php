@@ -75,7 +75,7 @@ V porovnaní s kontinuálnym lineárnym kódom majú funkcie mnoho výhod.<p>
 </ol>
 <h3 id = 'p3'>Vytvorenie funkcie v PHP</h3><p>
 
-Deklarovanie funkcie sa začína slovom funkciou. Kód funkcie je uvedený medzi zložené zátvorky.
+Deklarovanie funkcie sa začína slovom function. Kód funkcie je uvedený medzi zložené zátvorky.
 <p>
 <h5 class="card-header">Syntax</h5>
                                                 <div class="card-body">
