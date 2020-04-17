@@ -11,13 +11,13 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		
-		<link rel="stylesheet" href="css/main.css" />
-		<link rel="stylesheet" href="../css/main.css" />
-		<link rel="stylesheet" href="../../css/main.css" />
+		<link rel="stylesheet" href="public/css/main.css" />
+		<link rel="stylesheet" href="../public/css/main.css" />
+		<link rel="stylesheet" href="../../public/css/main.css" />
 
-		<script src="assets/js/copy_button.js"></script>
-		<script src="../assets/js/copy_button.js"></script>
-		<script src="../../assets/js/copy_button.js"></script>
+		<script src="public/assets/js/copy_button.js"></script>
+		<script src="../public/assets/js/copy_button.js"></script>
+		<script src="../../public/assets/js/copy_button.js"></script>
 		
 
 	</head>
