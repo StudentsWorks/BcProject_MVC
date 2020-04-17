@@ -60,11 +60,9 @@ class  TestChecker {
                 $output.= "<h6>Chyba:( </h6>";
                 $output.= "Spravná odpoved: ".$solution["solution"]."<br>";
                 $output.= "Vašá odpoved: ".$cleanAnswer.$cleanAnswer1."<br><br>";
-            }
-        $output.="<h3>Uspešnosť: $correct/$total</h3>";
-            
-            
+            }       
         }
+        $output.="<h3>Uspešnosť: $correct/$total</h3>";
 
         return $output;
         

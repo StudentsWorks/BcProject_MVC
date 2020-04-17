@@ -13,12 +13,12 @@
                 $this->controller = 'home';
             }
 
-            if (file_exists('../app/controllers/'. $url[0]. '.php' )) {
+            if (file_exists('app/controllers/'. $url[0]. '.php' )) {
                 $this->controller = $url[0];
                 unset($url[0]);
             }           
             
-            if (file_exists('../app/views/home/'. $url[0]. '.php' )) {
+            if (file_exists('app/views/home/'. $url[0]. '.php' )) {
                 $this->controller = 'home';
                 if (method_exists($this->controller, $url[0])){
                     $this->method = $url[0];
@@ -27,7 +27,7 @@
                 }
             }
             
-            require_once '../app/controllers/'.$this->controller.'.php';
+            require_once 'app/controllers/'.$this->controller.'.php';
                 
             
             $this->controller = new $this->controller;
