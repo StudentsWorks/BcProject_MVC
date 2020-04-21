@@ -42,7 +42,7 @@ INSERT INTO solutions(question, solution, test_name) VALUES
     ("Jazyk, v ktorom definujete obrysy, nejaké vlastnosti stránky, ako sú tlačidlá, tabuľky, polia, zoznamy atď.", "html", "instalacia"),
     ("S týmto jazykom môžete meniť typy písma, farby a obrysy HTML objektov", "css", "instalacia"),
     ("veľký šéf nad vetkými web jazykmi", "javaskript", "instalacia"),
-    ("Jjeden z najjednoduchších lokálnych serverov, ktorý funguje vo všetkých hlavných operačných systémoch", "xampp", "instalacia"),
+    ("Jeden z najjednoduchších lokálnych serverov, ktorý funguje vo všetkých hlavných operačných systémoch", "xampp", "instalacia"),
     ("Tento server funguje len v operačnom systéme Windows.", "wamp", "instalacia"),
 
     ("Jednoriadkový komentár", "//", "syntax"),
@@ -51,7 +51,7 @@ INSERT INTO solutions(question, solution, test_name) VALUES
     ("PHP kód dávame do značiek", "&lt;?php ?&gt;", "syntax"),
     ("Tento znak musí predchádzať menám všetkých premenných", "$", "syntax"),
 
-    ("medzi znakom $ a názvom premennej nemôžu byť", "medzery", "premenne"),
+    ("Medzi znakom $ a názvom premennej nemôžu byť", "medzery", "premenne"),
     ("Ktorý s nasledujúcich typov údajov PHP NEpodporuje: reťazec, celé číslo, NULL, set, object", "set", "premenne"),
     ("Údajový typ, ktorý obsahuje ostupnosť znakov", "reťazec", "premenne"),
     ("Nenulové číslo medzi -2 147 483 648 a 2 147 483 647: ", "celé číslo", "premenne"),
@@ -127,7 +127,7 @@ INSERT INTO solutions(question, solution, test_name) VALUES
     ("Ak chcete zničiť jednu premennú relácie, môžete použiť funkciu", "unset()", "sessions");
 
 INSERT INTO options_bank (options, test_name) VALUES
-    ('["@","!","%", "#", "&", "^", "*", ":", ".", ",", "\", "/", "-", "+", "()", "&lt;&gt;"]', "syntax"),
-    ('["!=", "+-", "/*", "//", "$", "&", "&&", "and", "{}", "@", "?", "..", "|||", "~"]', "operatory"), 
+    ('["@","!","%", "#", "&", "^", "*", ":", ".", ",", "/", "-", "+", "()", "&lt;&gt;"]', "syntax"),
+    ('["!=", "+-", "/*", "//", "$", "&", "&&", "and", "@", "?", "{}", "..", "|||", "~"]', "operatory"), 
     ('["cookie_vars", "cookie_chars", "called", "set", "valid", "named_as", "lifetime", "run_at", "host", "find", "look"]', "cookies"),
     ('["session.path", "session.map", "is_valid()", "exists()", "wasset()", "destroy()", "forget()", "kill()", "make()", "create()", "manage()"]', "sessions");

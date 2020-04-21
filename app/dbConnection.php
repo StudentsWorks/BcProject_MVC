@@ -11,6 +11,12 @@ function OpenCon()
     
     
     $conn = new mysqli($dbhost, $dbuser, $dbpass,$db, $port) or die("Connect failed: %s\n". $conn -> error);
+
+    if (!$conn->set_charset("utf8")) {
+      printf("Error loading character set utf8: %s\n", $mysqli->error);
+      exit();
+    }
+
     return $conn;
  }
  

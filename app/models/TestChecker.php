@@ -6,7 +6,6 @@ class  TestChecker {
     public function __construct()
     {        
         $this->db = OpenCon();
-        //echo "TestChecker was initialized<br>";
     }
 
     public function __destruct()
@@ -15,20 +14,17 @@ class  TestChecker {
     }
 
     public function setValues($test_name, $user_answers){
-        //echo "TestChecker is setting values<br>";
+
         $this->test_name = $test_name;
         $this->user_answers = $user_answers;
     }
 
     public function clearData($data) {
 
-        return strtolower(preg_replace('/\s+/', ' ', $data));
+        return htmlentities(strtolower(preg_replace('/\s+/', ' ', $data)));
     }
 
     public function checkTest() {
-        //print "User values from checkTest: ";
-        //var_dump($this->user_answers);
-      
         
         try {
             $stmt = "SELECT question_id, question, solution from solutions where test_name = \"$this->test_name\" order by question_id";
