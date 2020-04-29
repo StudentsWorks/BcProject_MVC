@@ -41,7 +41,7 @@ INSERT INTO solutions(question, solution, test_name) VALUES
     ("Prihlasovacie údaje používateľa všetky druhy ďalších dôležitých informácii sa uchovávajú v","databázach", "instalacia"),
     ("Jazyk, v ktorom definujete obrysy, nejaké vlastnosti stránky, ako sú tlačidlá, tabuľky, polia, zoznamy atď.", "html", "instalacia"),
     ("S týmto jazykom môžete meniť typy písma, farby a obrysy HTML objektov", "css", "instalacia"),
-    ("veľký šéf nad vetkými web jazykmi", "javaskript", "instalacia"),
+    ("veľký šéf nad vetkými web jazykmi", "javascript", "instalacia"),
     ("Jeden z najjednoduchších lokálnych serverov, ktorý funguje vo všetkých hlavných operačných systémoch", "xampp", "instalacia"),
     ("Tento server funguje len v operačnom systéme Windows.", "wamp", "instalacia"),
 

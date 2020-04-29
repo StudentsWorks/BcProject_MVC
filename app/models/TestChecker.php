@@ -20,15 +20,16 @@ class  TestChecker {
     }
 
     public function clearData($data) {
-
-        return htmlentities(strtolower(preg_replace('/\s+/', ' ', $data)));
+        $syn = array(",", ",", "?", ")", "(", "[", "]", "@", "!", ";", ":", "=", "+");
+        $data = str_replace($syn, "", $data);
+        return htmlentities(strtolower(trim(preg_replace('/\s+/', ' ', $data))));
     }
 
     public function checkTest() {
-        
+
         try {
-            $stmt = "SELECT question_id, question, solution from solutions where test_name = \"$this->test_name\" order by question_id";
-            $res = $this->db->query($stmt) or die($this->db->error);
+         $stmt = "SELECT question_id, question, solution from solutions where test_name = $this->test_name order by question_id";
+         $res = $this->db->query($stmt) or die($this->db->error);
         } catch (Exception $e){
             print "An error occured: ".$e->getMessage();
         }
@@ -40,29 +41,29 @@ class  TestChecker {
             $total ++;
             $answ_key = $solution["question_id"]."_";
             $output.= "<h4>Otazka: ".$solution["question"]."</h4>";
-            
+
             $cleanAnswer = $this->clearData($this->user_answers[$answ_key]);
             $cleanAnswer1 = $this->clearData($this->user_answers[$solution["question_id"]]);
-            
-            if ($cleanAnswer == $solution["solution"]) {   
-                $correct ++;     
+            $sim = similar_text($cleanAnswer, $solution["solution"], $perc);
+            $sim1 = similar_text($cleanAnswer1, $solution["solution"], $perc1);
+
+            if ($perc > 70) {
+                $correct ++;
                 $output.= "<h6>Spravne :) </h6>";
-                $output.= "Vašá odpoved: ".$cleanAnswer."<br><br>";
-            }else if ($cleanAnswer1 == $solution["solution"]) {
+                $output.= "Vašá odpoved: ".$this->user_answers[$answ_key]."<br><br>";
+            }else if ($perc1 > 70) {
                 $correct++;
                 $output.= "<h6>Spravne :) </h6>";
-                $output.= "Vašá odpoved: ".$cleanAnswer1."<br><br>";
+                $output.= "Vašá odpoved: ".$this->user_answers[$solution["question_id"]]."<br><br>";
             } else {
                 $output.= "<h6>Chyba:( </h6>";
-                $output.= "Spravná odpoved: ".$solution["solution"]."<br>";
-                $output.= "Vašá odpoved: ".$cleanAnswer.$cleanAnswer1."<br><br>";
+                $output.= "Spravná odpoved: ".$solution["solution"]."<br>".$perc." ".$perc1;
+                $output.= "Vašá odpoved: ".$this->user_answers[$answ_key].$this->user_answers[$solution["question_id"]]."<br><br>";
             }       
         }
         $output.="<h3>Uspešnosť: $correct/$total</h3>";
 
         return $output;
-        
     }
 
-    
-}
+ }

@@ -20,7 +20,7 @@ class Test {
 
     public function getContents() {
         try {
-            $stmt = "SELECT test_type from tests where test_name = '$this->test_name'";
+            $stmt = "SELECT test_type from tests where test_name = $this->test_name";
             $res = $this->db->query($stmt) or die($this->db->error);
             if(!$res) exit('No rows');
             while ($test = $res->fetch_assoc()){
@@ -32,7 +32,7 @@ class Test {
         }       
         
         try {
-            $stmt = "SELECT question_id, question, solution from solutions where test_name = '$this->test_name' order by question_id";
+            $stmt = "SELECT question_id, question, solution from solutions where test_name = $this->test_name order by question_id";
             $res = $this->db->query($stmt) or die($this->db->error);
         } catch (Exception $e){
             print "An error occured: ".$e->getMessage();
@@ -77,7 +77,6 @@ class Test {
                     }
                 }
 
-
                 $rendered_options = array();
                 $k = 0;
                 while (count($rendered_options) < 3) {
@@ -90,8 +89,6 @@ class Test {
                         $output.= "<label class='container'>".$option_to_render."<input type='radio' name = '".$solution["question_id"]."' value = '".$option_to_render."'>";
                         $output.="<span class='checkmark'></span></label>";
                     }
-                    
-
                 }
 
                 $output.= "<label class='container'>Neviem<input type='radio' name = '".$solution["question_id"]."' value = 'neviem' >";
@@ -102,6 +99,4 @@ class Test {
         $output.="<input type = 'submit'  value='Odovzdať'></form>";
         return $output;
     }
-    
-
 }

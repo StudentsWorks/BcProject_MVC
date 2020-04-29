@@ -1,6 +1,6 @@
 <?php
 
-    require_once '../app/core/Controller.php';
+    require_once 'app/core/Controller.php';
 
     class MyErrorHandler extends Controller {
 

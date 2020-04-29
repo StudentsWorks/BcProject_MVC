@@ -1,6 +1,5 @@
 <?php
 
-
 class TestCheck extends Controller{
      
     public function startTest($test_name) {
@@ -14,7 +13,6 @@ class TestCheck extends Controller{
         $checker = $this->model("TestChecker");
         $checker->setValues($test_name, $_POST);
         $results = $checker->checkTest();
-        $this->view("home/testResults", $results);
-        
+        $this->view("home/testResults", $results);    
      }
 }
